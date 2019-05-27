@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>sincronizacao-relogio</name>
+    <description>Projeto da Disciplina de Computação Distribuída</description>
+    <groupId>com.leofuso.academico.computacao-distribuida</groupId>
+    <artifactId>sincronizacao-relogio</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>jar</packaging>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <scm>
+        <url>https://github.com/LeoFuso/sincronizacao-relogio</url>
+        <connection>scm:git:ssh://git@github.com:LeoFuso/sincronizacao-relogio.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:LeoFuso/sincronizacao-relogio.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>dev.release</id>
+            <url>file:${project.build.directory}/repository/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+
+    </dependencies>
+
+</project>
