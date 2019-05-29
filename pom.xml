@@ -12,9 +12,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>sincronizacao-relogio-core</module>
-        <module>sincronizacao-relogio-server</module>
-        <module>sincronizacao-relogio-client</module>
+        <module>core</module>
+        <module>server</module>
+        <module>client</module>
     </modules>
 
     <properties>
