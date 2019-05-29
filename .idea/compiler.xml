@@ -9,8 +9,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sincronizacao-relogio-project" />
+        <module name="sincronizacao-relogio-client" />
+        <module name="sincronizacao-relogio-core" />
+        <module name="sincronizacao-relogio-server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="sincronizacao-relogio-core" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

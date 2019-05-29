@@ -1,5 +1,7 @@
-import datagram.DatagramChannel;
-import datagram.DatagramMessage;
+package com.leofuso.academico.cd.sincronizacaor.client;
+
+import com.leofuso.academico.cd.sincronizacaor.core.datagram.DatagramChannel;
+import com.leofuso.academico.cd.sincronizacaor.core.datagram.DatagramMessage;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,7 +9,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 
-class UDPClient {
+public class SincronizacaoRelogioClientApplication {
 
     public static void main(String[] args) throws Exception {
 
@@ -28,5 +30,6 @@ class UDPClient {
         System.out.println(message.getPayload());
 
         clientSocket.close();
+
     }
 }

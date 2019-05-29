@@ -9,8 +9,14 @@
     <groupId>com.leofuso.academico.computacao-distribuida</groupId>
     <artifactId>sincronizacao-relogio</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-    <packaging>jar</packaging>
+    <modules>
+        <module>sincronizacao-relogio-core</module>
+        <module>sincronizacao-relogio-server</module>
+        <module>sincronizacao-relogio-client</module>
+    </modules>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>

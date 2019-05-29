@@ -1,4 +1,4 @@
-package datagram;
+package com.leofuso.academico.cd.sincronizacaor.core.datagram;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -22,8 +22,8 @@ public class DatagramChannel<T extends Serializable> {
     public DatagramMessage<T> listen() throws IOException {
         final DatagramPacket datagramPacket = DatagramMessage.defaultPacket();
         socket.receive(datagramPacket);
-        final DatagramMessage<T> datagramMessage = new DatagramMessage<>(datagramPacket, reference);
-        return datagramMessage;
+
+        return new DatagramMessage<>(datagramPacket, reference);
     }
 
     public void send(T payload, InetSocketAddress address) {

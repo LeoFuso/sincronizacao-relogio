@@ -1,4 +1,4 @@
-package datagram;
+package com.leofuso.academico.cd.sincronizacaor.core.datagram;
 
 import java.io.*;
 import java.net.DatagramPacket;
@@ -15,7 +15,7 @@ public class DatagramMessage<T extends Serializable> {
     private final T payload;
     private final InetSocketAddress inetSocketAddress;
 
-    public DatagramMessage(DatagramPacket packet, Class<T> reference) {
+    DatagramMessage(DatagramPacket packet, Class<T> reference) {
         Objects.requireNonNull(packet, String.format("%s cannot be null", packet.getClass().getName()));
 
         final byte[] byteArray = packet.getData();
@@ -40,12 +40,12 @@ public class DatagramMessage<T extends Serializable> {
 
     }
 
-    public DatagramMessage(T payload, InetSocketAddress inetSocketAddress) {
+    DatagramMessage(T payload, InetSocketAddress inetSocketAddress) {
         this.payload = Objects.requireNonNull(payload, String.format("%s cannot be null", payload.getClass().getName()));
         this.inetSocketAddress = Objects.requireNonNull(inetSocketAddress, String.format("%s cannot be null", inetSocketAddress.getClass().getName()));
     }
 
-    public static DatagramPacket defaultPacket() {
+    static DatagramPacket defaultPacket() {
         return new DatagramPacket(MESSAGE_SIZE, MESSAGE_SIZE.length);
     }
 
@@ -58,7 +58,7 @@ public class DatagramMessage<T extends Serializable> {
         }
     }
 
-    public DatagramPacket getPacket() {
+    DatagramPacket getPacket() {
 
         final InetAddress address = this.inetSocketAddress.getAddress();
         final int port = this.inetSocketAddress.getPort();
@@ -76,16 +76,14 @@ public class DatagramMessage<T extends Serializable> {
         byte[] data = byteArrayOutputStream.toByteArray();
         verifyPayloadSize(data);
 
-        final DatagramPacket packet = new DatagramPacket(data, data.length, address, port);
-
-        return packet;
+        return new DatagramPacket(data, data.length, address, port);
     }
 
     public T getPayload() {
         return payload;
     }
 
-    public InetSocketAddress getInetSocketAddress() {
+    InetSocketAddress getInetSocketAddress() {
         return inetSocketAddress;
     }
 }
