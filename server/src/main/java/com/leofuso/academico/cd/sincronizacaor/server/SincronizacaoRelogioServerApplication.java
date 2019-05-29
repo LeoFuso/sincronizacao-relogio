@@ -4,6 +4,7 @@ import com.leofuso.academico.cd.sincronizacaor.core.datagram.DatagramChannel;
 import com.leofuso.academico.cd.sincronizacaor.core.datagram.DatagramMessage;
 
 import java.net.DatagramSocket;
+import java.net.InetAddress;
 
 public class SincronizacaoRelogioServerApplication {
 
@@ -16,8 +17,12 @@ public class SincronizacaoRelogioServerApplication {
 
             final DatagramMessage<String> message = stringDatagramChannel.listen();
 
+            final InetAddress address = message.getInetSocketAddress().getAddress();
+            final int port = message.getInetSocketAddress().getPort();
             String sentence = message.getPayload();
-            System.out.println(sentence);
+
+            final String output = String.format("[ %s:%d ]: %s", address.toString(), port, sentence);
+            System.out.println(output);
 
             String capitalizedSentence = sentence.toUpperCase();
             stringDatagramChannel.reply(capitalizedSentence, message);

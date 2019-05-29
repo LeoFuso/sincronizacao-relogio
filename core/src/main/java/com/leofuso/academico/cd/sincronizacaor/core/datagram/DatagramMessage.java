@@ -83,7 +83,7 @@ public class DatagramMessage<T extends Serializable> {
         return payload;
     }
 
-    InetSocketAddress getInetSocketAddress() {
+    public InetSocketAddress getInetSocketAddress() {
         return inetSocketAddress;
     }
 }
